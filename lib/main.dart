@@ -5,12 +5,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Center(child: Text('Hello World')),
-    );
+    return const MaterialApp(
+      // debugShowCheckedModeBanner: false, Para desactivar la Etiqueta debug en la app
+        home: Scaffold(
+      body: Center(child: Text('Hello World')),
+    ));
   }
 }
- 
