@@ -9,10 +9,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) { 
-    return const MaterialApp(
+  Widget build(BuildContext context) {
+    return MaterialApp(
       // debugShowCheckedModeBanner: false, Para desactivar la Etiqueta debug en la app
-      home: CounterScreen(),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.red,
+      ),
+      home: const CounterScreen(),
     );
   }
 }
