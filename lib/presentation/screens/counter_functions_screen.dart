@@ -40,37 +40,37 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
             ],
           ),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     setState(() {
-        //       clickCounter++;
-        //     });
-        //   },
-        //   child: const Icon(Icons.plus_one),
-        // ),
-        floatingActionButton: Column(
+        floatingActionButton: const Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              shape: const StadiumBorder(),
-              onPressed: () {
-                setState(() {
-                  clickCounter++;
-                });
-              },
-              child: const Icon(Icons.plus_one),
+            CustomButton(
+              icon: Icons.refresh_outlined,
             ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              shape: const StadiumBorder(),
-              onPressed: () {
-                setState(() {
-                  clickCounter--;
-                });
-              },
-              child: const Icon(Icons.exposure_minus_1_outlined),
+            SizedBox(height: 10),
+            CustomButton(icon: Icons.plus_one),
+            SizedBox(height: 10),
+            CustomButton(
+              icon: Icons.exposure_minus_1_outlined,
             ),
           ],
-        ));
+        )); 
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final IconData icon; //Variable que espera el widget Icon
+
+  const CustomButton({
+    super.key,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const StadiumBorder(),
+      onPressed: () {},
+      child: Icon(icon),
+    );
   }
 }
